@@ -38,9 +38,15 @@ function __setprompt
     PS1+="\n"
 
     # Add the virtualenv name to the prompt
-    if [ -n $VIRTUAL_ENV ]; then 
-       PS1+="\[${LIGHTMAGENTA}\]($(basename $VIRTUAL_ENV))\[${NOCOLOR}\]"
-    fi  
+    if [[ -n $VIRTUAL_ENV ]]; then
+       if [[ $(basename $VIRTUAL_ENV) == ".env" ]]; then
+          env_name=$(basename $(dirname ${VIRTUAL_ENV}))
+          else
+          env_name=$(basename ${VIRTUAL_ENV})
+          fi
+       PS1+="\[${LIGHTMAGENTA}\](${env_name})\[${NOCOLOR}\]"
+    fi
+
     
     if [[ $EUID -ne 0 ]]; then
        PS1+="\[${GREEN}\]$\[${NOCOLOR}\] " # Normal user

@@ -1,6 +1,4 @@
 alias date='date "+%a %h %d %Y, %r"'
-alias edif='xemacs -nw -q -l $HOME/.terminal.el'
-alias edift='xemacs -nw -q -l vt220.el'
 alias emacs='/usr/bin/emacs -nw'
 alias df="df -h | grep $USER"
 # just to be on the safe side
@@ -12,6 +10,4 @@ alias ls='ls --color=auto --ignore='*\~' --ignore='\#*\#' -h -v'
 
 #grep color
 alias grep='grep --color=auto'
-
-
 
